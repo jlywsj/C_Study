@@ -24,11 +24,23 @@ int main() {
 
 	printf("%s的长度是：%d\n%d的位数是：%d", arr, my_strlen(arr), num, my_intlen(num));*/
 
-	int num;
-	scanf("%d", &num);
+	//int num;
+	//scanf("%d", &num);
 	//printf("%d的阶乘是%d\n", num, factorial(num));
 
-	printf("%d的斐波那契数列的值为%d\n", fib(num));
+	//printf("%d的斐波那契数列的值为%d\n",num, fib(num));
+
+	//int n;
+	//printf("输入盘子的数量，生成步骤:");
+	//scanf("%d", &n);
+	//hanoita(n, 'x', 'y', 'z');
+	//system("pause");
+
+	int n;
+	printf("请输入台阶的层数：");
+	scanf("%d", &n);
+	int count = frog2(n);
+	printf("共有%d种跳法", count);
 
 	return 0;
 }

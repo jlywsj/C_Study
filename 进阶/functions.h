@@ -13,4 +13,11 @@ int factorial(int num);
 
 int fib(int n);
 
+int hanoita(int n, char* x, char* y, char* z);
+
+int frog(int n);
+
+int frog2(int n);
+
+
 #endif // !__FUNCTIONS_H__
