@@ -9,7 +9,7 @@ int sum(int n, ...)
 {
 	int i, sum = 0;
 	va_list vap;
-	
+
 	va_start(vap, n);
 	for (i = 0; i < n; i++) {
 		sum += va_arg(vap, int);
@@ -22,7 +22,8 @@ int sum(int n, ...)
 int main()
 {
 	int n = sum(3, 100, 200, 500);
-	// printf("%d", n);
+	printf("%d", n);
+	printf("%d + %d + %d = %d", 100, 200, 500, n);
 
 	return 0;
 }
