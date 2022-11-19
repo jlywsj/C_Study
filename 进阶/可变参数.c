@@ -22,7 +22,7 @@ int sum(int n, ...)
 int main()
 {
 	int n = sum(3, 100, 200, 500);
-	printf("%d", n);
+	// printf("%d", n);
 
 	return 0;
 }
