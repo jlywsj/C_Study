@@ -19,7 +19,6 @@ char ch = ' ';
 
 int (*select(char op))(int, int)
 {
-	ch = op;
 	switch (op)
 	{
 	case '+': return add;
