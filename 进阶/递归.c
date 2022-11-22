@@ -3,11 +3,10 @@
 #include <stdio.h>
 
 void recursion(void);
-static int count = 10;
 
 void recursion(void)
 {
-
+	static int count = 10;
 	printf("H1!\n");
 	if (--count) {
 		recursion();
