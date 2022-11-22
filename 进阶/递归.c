@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-void recursion(void);
+void recursion();
 
-void recursion(void)
+void recursion()
 {
 	static int count = 10;
 	printf("H1!\n");
