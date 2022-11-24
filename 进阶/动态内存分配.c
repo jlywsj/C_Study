@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-int main()
+int main1()
 {
 	//srand((unsigned) time(NULL));
 	
