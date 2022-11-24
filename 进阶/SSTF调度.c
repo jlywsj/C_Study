@@ -1,15 +1,12 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-
-//  锟斤拷锟窖帮拷锟斤拷锟斤拷鹊锟斤拷锟斤拷惴�
+//  最短寻道优先调度算法
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
 void getResult(int* ptr, int cur_val, int count)
 {
 	int nextIndex = -1;
-	int distance = -1;	// 锟芥储锟斤拷前锟斤拷锟斤拷锟揭拷贫锟斤拷木锟斤拷锟�
-	int temp = 0;	// 锟斤拷锟斤拷时锟斤拷时锟芥储锟斤拷要锟狡讹拷锟侥撅拷锟斤拷
+	int distance = -1;	// 存储当前最短需要移动的距离
+	int temp = 0;	// 遍历时临时存储需要移动的距离
 	int time = 0;
 	float sum = 0;
 
@@ -32,7 +29,7 @@ void getResult(int* ptr, int cur_val, int count)
 			}
 		}
 
-		if(time == 0) printf("next\tdistance\n");
+		if (time == 0) printf("next\tdistance\n");
 		printf("%d\t%d\n", ptr[nextIndex], distance);
 		cur_val = ptr[nextIndex];
 		ptr[nextIndex] = -1;
@@ -40,8 +37,7 @@ void getResult(int* ptr, int cur_val, int count)
 		distance = -1;
 		time++;
 	}
-
-	printf("平锟斤拷寻锟斤拷锟斤拷锟饺ｏ拷%.1f", floor(sum*10/count)/10.0);	// 取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+	printf("平均寻道长度：%.1f", floor(sum * 10 / count) / 10.0);	// 取消四舍五入
 }
 
 int main()
@@ -50,22 +46,19 @@ int main()
 	int* ptr = NULL;
 	int cur_p = 0;
 
-	printf("锟斤拷锟斤拷锟斤拷锟叫讹拷锟劫革拷I/O锟斤拷锟斤拷");
+	printf("请输入有多少个I/O请求：");
 	scanf("%d", &count);
 	ptr = realloc(ptr, count * sizeof(int));
 
 	for (int i = 0; i < count; i++) {
-		printf("锟斤拷锟斤拷锟斤拷锟�%d锟斤拷锟脚碉拷锟脚ｏ拷",i);
+		printf("请输入第%d个磁道号：", i);
 		scanf("%d", &ptr[i]);
 	}
 
-	printf("锟斤拷锟斤拷锟诫当前锟侥磁碉拷锟脚ｏ拷");
+	printf("请输入当前的磁道号：");
 	scanf("%d", &cur_p);
-
 	system("cls");
 	getResult(ptr, cur_p, count);
-	
 	free(ptr);
-
 	return 0;
 }
