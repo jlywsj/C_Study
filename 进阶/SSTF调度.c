@@ -1,3 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//#define _CRT_SECURE_NO_WARNINGS 1
+
 //  最短寻道优先调度算法
 #include <stdio.h>
 #include <stdlib.h>
@@ -62,3 +65,4 @@ int main()
 	free(ptr);
 	return 0;
 }
+
