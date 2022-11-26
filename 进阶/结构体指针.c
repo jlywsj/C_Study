@@ -12,7 +12,7 @@ int main(void)
     struct Stu *stu = {
         "张三",
         "男",
-        18
+        19
     };
 
     // 结构体
