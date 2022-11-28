@@ -10,7 +10,7 @@ char* getWord(char c)
 	case 'c':	return "Cat";
 	case 'd':	return "Dog";
 	default:
-		return "N";
+		return "None";
 	}
 }
 
