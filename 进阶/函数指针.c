@@ -5,19 +5,19 @@ char* getWord(char c)
 {
 	switch (c)
 	{
-	case 'a':	return "Apple";	// ·µ»ØµÄ×Ö·û´®´æ´¢ÔÚ¾²Ì¬´æ´¢ÇøÖÐ£¬²»»áËæ×Åº¯Êý½áÊø¶øÏú»Ù;
+	case 'a':	return "Apple";	// ï¿½ï¿½ï¿½Øµï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½Ú¾ï¿½Ì¬ï¿½æ´¢ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 	case 'b':	return "Banana";
 	case 'c':	return "Cat";
 	case 'd':	return "Dog";
 	default:
-		return "None";
+		return "N";
 	}
 }
 
 int main()
 {
 	char input;
-	printf("ÇëÊäÈëÒ»¸ö×ÖÄ¸:");
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ä¸:");
 	scanf("%c", &input);
 
 	char *p = getWord(input);
