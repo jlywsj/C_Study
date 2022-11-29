@@ -50,43 +50,50 @@ struct Book
 };
 
 
-struct Book getInput(struct Book book) {
+void getInput(struct Book* book) {
 	printf("请输入书名：");
-	scanf("%s", book.title);
+	scanf("%s", book->title);
 	printf("请输入作者：");
-	scanf("%s", book.author);
+	scanf("%s", book->author);
 	printf("请输入售价：");
-	scanf("%f", &book.price);
+	scanf("%f", &book->price);
 	printf("请输入出版日期：");
-	scanf("%d-%d-%d", &book.date.year, &book.date.month, &book.date.day);
+	scanf("%d-%d-%d", &book->date.year, &book->date.month, &book->date.day);
 	printf("请输入出版社：");
-	scanf("%s", book.publisher);
-
-	return book;
+	scanf("%s", book->publisher);
 }
 
 void printBook(struct Book book) {
-	printf("书名 :%s\n",book.title);
-	printf("作者 :%s\n",book.author);
-	printf("售价 :%.2f\n",book.price);
-	printf("出版日期 : %d-%d-%d\n",book.date.year, book.date.month,book.date.day);
+	printf("书名 :%s\n", book.title);
+	printf("作者 :%s\n", book.author);
+	printf("售价 :%.2f\n", book.price);
+	printf("出版日期 : %d-%d-%d\n", book.date.year, book.date.month, book.date.day);
 }
 
 
 int main(void)
 {
-	static struct Book b1;
-	static struct Book b2;
+	/*struct Book b1;
+	struct Book b2;*/
+	struct Book* b1, * b2;
+	b1 = (struct Book*)malloc(sizeof(struct Book));
+	b2 = (struct Book*)malloc(sizeof(struct Book));
 
 	printf("请录入第一本书的信息....\n");
-	b1 = getInput(b1);
+	getInput(&b1);
 
 	printf("请录入第二本书的信息....\n");
-	b2 = getInput(b2);
+	getInput(&b2);
 
-	printBook(b1);
-	putchar("\n");
-	printBook(b2);
+	//printBook(b1);
+	//putchar("\n");
+	//printBook(b2);
+
+	
+	// 使用malloc必须释放
+	free(b1);
+	free(b2);
+
 
 	return 0;
 }
