@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-int main1()
+int main()
 {
 	//srand((unsigned) time(NULL));
 	
@@ -50,10 +50,7 @@ int main1()
 	
 
 	// 根据用户输入，不断增加内存空间大小，不使用malloc
-
 	int* ptr = NULL;
-	int* temp = NULL;
-	int* ptr2 = NULL;
 	int num = 0;
 	int length = 0;
 	while (1)
