@@ -3,7 +3,7 @@
 #define __MY_STRING
 
 char* inStr();
-int* str_to_arrInt();
-int get_intarray_len(int* p);
+// 需要全局修改指针变量，用到指向指针的指针
+int getIntArr(int**);
 
 #endif // __MY_STRING

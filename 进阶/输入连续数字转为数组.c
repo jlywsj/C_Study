@@ -49,7 +49,6 @@ int getIntArr(int **ret)
 
 int main(void)
 {
-	
 	int* ptr = NULL;
 	int len = 0;
 	len = getIntArr(&ptr);	// 传递指针的地址
