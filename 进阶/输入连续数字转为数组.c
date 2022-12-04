@@ -4,13 +4,14 @@
 #include <ctype.h>
 
 
-int getIntArr(static int *ret)
+// 要改变指针的值需要获取的是指针的地址
+int getIntArr(int **ret)
 {
 	
 	printf("请输入：");
 
 	char* str = NULL;
-	ret = NULL;
+	*ret = NULL;
 	char ch = getchar();
 	int len = 0;
 	int count = 0;
@@ -18,20 +19,27 @@ int getIntArr(static int *ret)
 
 	while (ch != '\n')
 	{
-		while (!isspace(ch) && ch != EOF)
+		while (!isspace(ch) && ch != EOF && ch >= 48 && ch <= 57)
 		{
 			str = realloc(str, ++len * sizeof(char));
 			str[len - 1] = ch;
 			ch = getchar();
 		}
+		
+		if (str != NULL) {
+			*ret = realloc(*ret, ++count * sizeof(int));
+			// 有优先级的问题
+			(*ret)[count - 1] = atoi(str);
+			free(str);	
+			str = NULL;
+			len = 0;
+		}
 
-		ret = realloc(ret, ++count * sizeof(int));
-		ret[count - 1] = atoi(str);
-		free(str);
-		str = NULL;
-		len = 0;
 		if (ch != '\n') {
-			ch = getchar();
+			while (isspace(ch)  || ch < 48 || ch > 57)
+			{
+				ch = getchar();
+			}
 		}
 	}
 
@@ -42,14 +50,14 @@ int getIntArr(static int *ret)
 int main(void)
 {
 	
-	static int* ptr = NULL;
+	int* ptr = NULL;
 	int len = 0;
-	len = getIntArr(ptr);
-	printf("%d\n", len);
+	len = getIntArr(&ptr);	// 传递指针的地址
 	
+
 	for (int i = 0; i < len; i++)
 	{
-		printf("%d\n", ptr[i]);
+ 		printf("ptr[%d] = %d\n",i, ptr[i]);
 	}
 
 	return 0;
