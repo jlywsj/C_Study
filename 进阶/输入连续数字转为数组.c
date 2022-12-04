@@ -3,9 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
-
 // 要改变指针的值需要获取的是指针的地址
-int getIntArr(int **ret)
+int getIntArr123(int **ret)
 {
 	
 	printf("请输入：");
@@ -51,7 +50,7 @@ int main(void)
 {
 	int* ptr = NULL;
 	int len = 0;
-	len = getIntArr(&ptr);	// 传递指针的地址
+	len = getIntArr123(&ptr);	// 传递指针的地址
 	
 
 	for (int i = 0; i < len; i++)

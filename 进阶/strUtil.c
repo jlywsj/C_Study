@@ -45,11 +45,9 @@ int getIntArr(int **ret)
 			len = 0;
 		}
 
-		if (ch != '\n') {
-			while (isspace(ch)  || ch < 48 || ch > 57)
-			{
-				ch = getchar();
-			}
+		while ((isspace(ch)  || ch < 48 || ch > 57) && ch != '\n')
+		{
+			ch = getchar();
 		}
 	}
 
