@@ -2,14 +2,14 @@
 #include <strUtil.c>
 
 
-int getMax(int* arr,int ptr, int len)
-{
-	if (ptr == len-1) {
-		return arr[ptr];
-	}
-	int num = getMax(arr, ptr + 1, len);
-	return arr[ptr] > num ? arr[ptr] : num;
-}
+//int getMax(int* arr,int ptr, int len)
+//{
+//	if (ptr == len-1) {
+//		return arr[ptr];
+//	}
+//	int num = getMax(arr, ptr + 1, len);
+//	return arr[ptr] > num ? arr[ptr] : num;
+//}
 
 int getMax(int* arr, int ptr, int len)
 {
